@@ -10,14 +10,14 @@ Mysql 8.0.21,
 gcc 8.1.0,  
 Mecab 0.996 UTF-8 dynamiclibrary(動的ライブラリ),  
 
-Required package(golang)(必要パッケージ golang)
+Required package(golang)(必要パッケージ golang)    
 --- golang ---  
 ```
 go get golang.org/x/net/html
 go get github.com/go-sql-driver/mysql
 ```  
-Install as described above.（上記のようにインストールしてください）
---- mysql ---  
+Install as described above.（上記のようにインストールしてください）      
+--- mysql ---        
 Create a database with the database name search（search名のデータベースを作ってください）|
 Please make your table as follows.　（以下のようにテーブルを作ってくださいませ。)       　|
 ```
