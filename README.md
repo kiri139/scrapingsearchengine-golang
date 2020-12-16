@@ -4,11 +4,11 @@
 I'm not sure in every way.There's no scraping going on, and I'm not taking responsibility for that.（私は性能に自信がありませんスクレイピングを行います責任を持ちません）
 
 # What you need. (あなたに必要なもの)
+mecab shared library for (linux or windows)((windows or linux)のmecab共有ライブラリ),
 Go 1.15,
 Mysql 8.0.21,
 gcc 8.1.0,
 Mecab 0.996 UTF-8 dynamiclibrary(動的ライブラリ),
-OS windows 10
 
 Required package(golang)(必要パッケージ golang)
 --- golang ---
@@ -35,6 +35,15 @@ Please make your table as follows.　（以下のようにテーブルを作っ�
 ```
 # How to use  (使い方)
 1. Download the above file as a zip file and unzip it(上記のファイルをZIPファイルとしてダウンロードし、解凍してください。) OR  ``` git clone https://github.com/kiri139/scrapingsearchengine-golang.git ```
+2. switch (mecab shared library) {
+   case linux:
+     Place "libmecab.so" in "materials\linux\" ( "materials/linux/" に "libmecab.so" を配置します。)
+     Library linking of <stdlib.h> with gcc(gccで<stdlib.h>をライブラリリンク)
+   
+   case windows:
+   Place "libmecab.dll" in "materials" ( "materials/" に "libmecab.dll" を配置します。)
+   
+}
 2. ``` go run crawl.go ```
 3. ``` go run main.go ```
 4. ``` http://localhost:8080/home/ ``` Access to (にアクセス！)
