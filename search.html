@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title style="font-family: 'Garamond'">search - {{.Mese}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/86039e244f.js" crossorigin="anonymous"></script>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {   
+        font-family: "Microsoft Sans Serif";
+        padding: 5px 294px;
+        height:auto;
+      }
+      .main {
+        padding: 5px 48px;
+      }
+      .title {
+      	font-size: 29px;
+        font-weight: 500;
+      }
+      .forms {
+        width: 465px;
+        height: 38px;
+        border-radius: 30px;
+        border: 2px solid rgb(172, 180, 167);
+      }
+      .inp {
+      	border: 0;
+  		width: 100%;
+  		height: 100%;
+  		background: none;
+        padding: 0 25px;
+        padding-top: 10px;
+        outline: none;
+        font-size: 17px;
+      }
+      .btn {
+        position: absolute;
+        left: 53%;
+      	border: 0;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid rgb(228, 220, 220);
+        transition: .3s linear;
+        color: rgb(34, 183, 252);
+      }
+      .messege{
+        padding: 3px 20px;
+      }
+      .resuspan{
+        color: #474e55;
+      }
+      .zyou{
+        width: 420px;
+        padding: 15px 20px;
+        line-height: 28px;
+      }
+
+      .setum{
+        line-height: 22px;
+      }
+
+      .url {
+        text-decoration: none;
+      }
+
+      .noinput {
+      	color: #ff0000;
+      	padding: 5px 10px;
+      }
+      .norust{
+      	color: rgba(115, 113, 131, 0.651)
+      }
+    </style>
+    <script>
+      function notextinput() {
+        var inputnogo;
+        inputnogo = document.getElementById("textinp").value;
+        if (inputnogo = ""){
+          alert(" ");
+        };
+      };
+    </script>
+  </head>
+  <body>
+  	<div class="main">
+  	  <h2 class="title" style="font-family: serif">霧 <span style="font-family: 'Georgia'">KIRI - search</span></h2>
+  	  <div class="forms">
+  	  	<form action="#" method="get">
+          <input class="inp" id="textinp" type="search" name="keyword" title="検索" value="{{.Mese}}" placeholder="keyword input" autocapitalize="off" autocomplete="off" autocorrect="off">
+          <button onclick="notextinput();" class="btn" type="sumbit"><i class="fas fa-search"></i></button>
+        </form>
+  	  </div>
+      <hr>
+      <p class="messege">{{.Mese}}<span class="resuspan"> - result</span></p>
+      <div class="rust">
+        {{range .InformationSets}}
+          <div class="zyou">
+            <a href="{{.StructHost}}">
+              <h3>{{.StructTitle}}</h3>
+              <a class="url" href="{{.StructHost}}">{{.StructHost}}</a>
+              <p class="setum">{{.StructExplanation}}</p>
+            </a>
+          </div>
+        {{else}}
+          <h3 class="norust">I couldn't find it.Make your keywords easier to understand or use other search engines</h3>
+        {{end}}
+      </div>
+  	</div>  
+  </body>
+</html>
