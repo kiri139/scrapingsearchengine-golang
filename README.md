@@ -1,1 +1,0 @@
-# scrapingsearchengine-golang
